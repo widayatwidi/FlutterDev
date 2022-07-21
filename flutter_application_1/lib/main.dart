@@ -1,10 +1,10 @@
 // import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/destinasi.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      title: 'My App',
       home: SafeArea(child: MyScaffold()),
     )
   );
@@ -132,7 +132,10 @@ Container reusableButton(BuildContext context, String desc, String coloring) {
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
       onPressed: () {
-        // onTap();
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (context) => DestinasiPage())
+        );
       },
       child: Text(desc, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
       style: ButtonStyle(
