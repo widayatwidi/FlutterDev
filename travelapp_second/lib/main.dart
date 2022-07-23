@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp_second/pages/community.dart';
 import 'package:travelapp_second/pages/destinasi.dart';
 import 'package:travelapp_second/pages/video.dart';
 import 'package:travelapp_second/reusable_widget.dart';
@@ -99,10 +100,10 @@ class MyScaffold extends StatelessWidget {
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context, 
-                      //   MaterialPageRoute(builder: (context) => DestinasiPage())
-                      // );
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => CommunityPage())
+                      );
                     },
                     child: Text("Community", style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
                     style: ButtonStyle(
