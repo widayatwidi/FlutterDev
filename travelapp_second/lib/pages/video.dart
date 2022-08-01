@@ -66,7 +66,7 @@ class _VideoPageState extends State<VideoPage> with TickerProviderStateMixin {
                   unselectedLabelColor: Colors.grey,
                   isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.label,
-                  indicator: CircleTabIndicator(color: Colors.black38, radius: 4),
+                  // indicator: CircleTabIndicator(color: Colors.black38, radius: 4),
                   tabs: [
                     Tab(text: "Places",),
                     Tab(text: "Inspiration",),
