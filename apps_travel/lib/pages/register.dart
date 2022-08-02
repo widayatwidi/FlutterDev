@@ -37,7 +37,8 @@ class _RegisterPageState extends State<RegisterPage> {
     var body = jsonDecode(response.body);
     print("respon keluar");
     print(response);
-    if(body['success']) {
+    print(body);
+    if(body["sukses"]) {
       Navigator.push(
         context, 
         new MaterialPageRoute(builder: (context) => Scaffold(
