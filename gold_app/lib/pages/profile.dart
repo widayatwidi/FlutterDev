@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:gold_app/pages/beli_rupiah.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
 import 'package:gold_app/widgets/app_text.dart';
 import 'package:gold_app/widgets/reusable_widget.dart';
@@ -19,14 +20,16 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(gradient: LinearGradient(
-          colors: [
-            hexStringToColor("000000"),
-            hexStringToColor("100F0F"),
-            hexStringToColor("100720")
-          ],
-          begin: Alignment.topCenter, end: Alignment.bottomCenter
-        )),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              hexStringToColor("000000"),
+              hexStringToColor("100F0F"),
+              hexStringToColor("100720")
+            ],
+            begin: Alignment.topCenter, end: Alignment.bottomCenter
+          )
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -169,7 +172,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: <Widget>[
                         IconButton(
                           onPressed: () {
-                            
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => BeliRup())
+                            );
                           },
                           icon: Icon(Icons.account_tree, color: Colors.black,),
                           
@@ -180,10 +186,10 @@ class _ProfilePageState extends State<ProfilePage> {
                             style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 12),
                           ),
                           onPressed: () {
-                            // Navigator.push(
-                            //   context, 
-                            //   MaterialPageRoute(builder: (context) => RegisterPage())
-                            // );
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => BeliRup())
+                            );
                           },
                         )
                       ],
