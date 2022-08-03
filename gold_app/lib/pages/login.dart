@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:gold_app/pages/profile.dart';
 import 'package:gold_app/pages/register.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
 import 'package:gold_app/widgets/app_text.dart';
@@ -77,10 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onPressed: (() {
                       print("Proses Login");
-                      // Navigator.push(
-                      //   context, 
-                      //   MaterialPageRoute(builder: (context) => DestinasiPage())
-                      // );
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => ProfilePage())
+                      );
                     }), 
                     child: const Text(
                       "Login",
