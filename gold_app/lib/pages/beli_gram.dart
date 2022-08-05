@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gold_app/pages/beli_gram.dart';
+import 'package:gold_app/pages/beli_rupiah.dart';
 import 'package:gold_app/pages/login.dart';
 import 'package:gold_app/pages/profile.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
@@ -10,14 +11,14 @@ import 'package:gold_app/widgets/reusable_widget.dart';
 import 'package:gold_app/widgets/text_field.dart';
 import 'package:gold_app/widgets/text_field_black.dart';
 
-class BeliRup extends StatefulWidget {
-  const BeliRup({Key? key}) : super(key: key);
+class BeliGram extends StatefulWidget {
+  const BeliGram({Key? key}) : super(key: key);
 
   @override
-  State<BeliRup> createState() => _BeliRupState();
+  State<BeliGram> createState() => _BeliGramState();
 }
 
-class _BeliRupState extends State<BeliRup> {
+class _BeliGramState extends State<BeliGram> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +78,7 @@ class _BeliRupState extends State<BeliRup> {
                         onPressed: () {
                           // Navigator.push(
                           //   context, 
-                          //   MaterialPageRoute(builder: (context) => BeliRup())
+                          //   MaterialPageRoute(builder: (context) => BeliGram())
                           // );
                         },
                         icon: Icon(Icons.arrow_circle_right, color: Color.fromARGB(255, 77, 200, 58),), 
@@ -132,12 +133,12 @@ class _BeliRupState extends State<BeliRup> {
                               width: 148,
                               height: 50,
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 68, 67, 66),
+                                color: Color.fromARGB(255, 205, 204, 201),
                                 borderRadius: BorderRadius.circular(30)
                               ),
                               child: Center(
                                 child: TextButton(
-                                  child: Text("Nominal", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                                  child: Text("Nominal", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
                                   onPressed: () {
                                     Navigator.push(
                                       context, 
@@ -152,12 +153,12 @@ class _BeliRupState extends State<BeliRup> {
                               width: 148,
                               height: 50,
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 205, 204, 201),
+                                color: Color.fromARGB(255, 68, 67, 66),
                                 borderRadius: BorderRadius.circular(30)
                               ),
                               child: Center(
                                 child: TextButton(
-                                  child: Text("Gram", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
+                                  child: Text("Gram", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                                   onPressed: () {
                                     Navigator.push(
                                       context, 
@@ -180,7 +181,7 @@ class _BeliRupState extends State<BeliRup> {
                         children: <Widget>[
                           Padding(
                             padding: const EdgeInsets.only(left: 6),
-                            child: AppLargeText(text: "Nominal yang diinginkan", size: 14,),
+                            child: AppLargeText(text: "Gram yang diinginkan", size: 14,),
                           ),
                           SizedBox(height: 15,),
                           TextFieldWidgetBlack(
@@ -191,7 +192,7 @@ class _BeliRupState extends State<BeliRup> {
                           SizedBox(height: 5,),
                           Padding(
                             padding: const EdgeInsets.only(left: 6),
-                            child: Text("Minimal Rp 50.000,-", textAlign: TextAlign.left, style: TextStyle(fontSize: 12),),
+                            child: Text("Minimal gram 0.0536 gr", textAlign: TextAlign.left, style: TextStyle(fontSize: 12),),
                           ),
                           SizedBox(height: 25,),
                           Container(
@@ -203,7 +204,7 @@ class _BeliRupState extends State<BeliRup> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(left: 15, top: 12),
-                              child: Text("Setara dengan", style: TextStyle(fontSize: 13),),
+                              child: Text("Harga", style: TextStyle(fontSize: 13),),
                             ),
                           ),
                           SizedBox(height: 15,),
