@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gold_app/pages/beli_gram.dart';
 import 'package:gold_app/pages/beli_rupiah.dart';
+import 'package:gold_app/pages/detail_pembelian.dart';
 import 'package:gold_app/pages/login.dart';
 import 'package:gold_app/pages/profile.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
@@ -88,133 +89,182 @@ class _BeliGramState extends State<BeliGram> {
                     ],
                   ),
                 ),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.76,
-                      decoration: BoxDecoration(
-                        color: Colors.white
-                      ),
-                    ),
-                    Positioned(
-                      top: 0,
-                      child: Container(
+                SingleChildScrollView(
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 60,
+                        height: MediaQuery.of(context).size.height * 0.76,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              hexStringToColor("000000"),
-                              hexStringToColor("100F0F"),
-                              hexStringToColor("100720")
-                            ],
-                            begin: Alignment.topCenter, end: Alignment.bottomCenter
-                          )
+                          color: Colors.white
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 30,
-                      left: 30,
-                      right: 30,
-                      child: Container(
-                        width: 380,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 205, 204, 201),
-                          borderRadius: BorderRadius.circular(30)
+                      Positioned(
+                        top: 0,
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                hexStringToColor("000000"),
+                                hexStringToColor("100F0F"),
+                                hexStringToColor("100720")
+                              ],
+                              begin: Alignment.topCenter, end: Alignment.bottomCenter
+                            )
+                          ),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      ),
+                      Positioned(
+                        top: 30,
+                        left: 30,
+                        right: 30,
+                        child: Container(
+                          width: 380,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 205, 204, 201),
+                            borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Container(
+                                margin: const EdgeInsets.only(left: 6),
+                                width: 148,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 205, 204, 201),
+                                  borderRadius: BorderRadius.circular(30)
+                                ),
+                                child: Center(
+                                  child: TextButton(
+                                    child: Text("Nominal", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context, 
+                                        MaterialPageRoute(builder: (context) => BeliRup())
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(right: 6),
+                                width: 148,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 68, 67, 66),
+                                  borderRadius: BorderRadius.circular(30)
+                                ),
+                                child: Center(
+                                  child: TextButton(
+                                    child: Text("Gram", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context, 
+                                        MaterialPageRoute(builder: (context) => BeliGram())
+                                      );
+                                    },
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: 120,
+                        left: 33,
+                        right: 33,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(left: 6),
+                              child: AppLargeText(text: "Gram yang diinginkan", size: 14,),
+                            ),
+                            SizedBox(height: 15,),
+                            TextFieldWidgetBlack(
+                              hintText: 'Isi nominal',
+                              obscureText: false,
+                              prefixIconData: Icons.price_change_outlined,
+                            ),
+                            SizedBox(height: 5,),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 6),
+                              child: Text("Minimal gram 0.0536 gr", textAlign: TextAlign.left, style: TextStyle(fontSize: 12),),
+                            ),
+                            SizedBox(height: 25,),
                             Container(
-                              margin: const EdgeInsets.only(left: 6),
-                              width: 148,
-                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              height: 75,
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(255, 205, 204, 201),
-                                borderRadius: BorderRadius.circular(30)
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Center(
-                                child: TextButton(
-                                  child: Text("Nominal", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context, 
-                                      MaterialPageRoute(builder: (context) => BeliRup())
-                                    );
-                                  },
-                                ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 15, top: 12),
+                                child: Text("Harga", style: TextStyle(fontSize: 13),),
                               ),
                             ),
+                            SizedBox(height: 15,),
                             Container(
-                              margin: const EdgeInsets.only(right: 6),
-                              width: 148,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 68, 67, 66),
-                                borderRadius: BorderRadius.circular(30)
+                              height: 110,
+                              child: GridView.count(
+                                padding: EdgeInsets.zero,
+                                physics: NeverScrollableScrollPhysics(),
+                                crossAxisCount: 3,
+                                childAspectRatio: 2/1,
+                                children: [
+                                  for (var list in listGram)
+                                    Container(
+                                      margin: const EdgeInsets.only(left: 4, right: 4, bottom: 8),
+                                      // width: MediaQuery.of(context).size.width * 0.28,
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: Color.fromARGB(255, 77, 200, 58),)
+                                      ),
+                                      child: Center(
+                                        child: AppText(text: '$list', color: Color.fromARGB(255, 77, 200, 58), size: 12,),
+                                      ),
+                                    )
+                                ],
                               ),
-                              child: Center(
-                                child: TextButton(
-                                  child: Text("Gram", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context, 
-                                      MaterialPageRoute(builder: (context) => BeliGram())
-                                    );
-                                  },
+                            ),
+                            SizedBox(height: 10,),
+                            Container(
+                              height: 45,
+                              width: MediaQuery.of(context).size.width * 1.2,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color.fromARGB(255, 83, 211, 58),
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius: new BorderRadius.circular(8)
+                                  )
                                 ),
+                                onPressed: (() {
+                                  print("Proses Beli Emas");
+                                  Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context) => DetailBeli())
+                                  );
+                                }), 
+                                child: const Text(
+                                  "Beli emas sekarang",
+                                  style: TextStyle(fontSize: 14, color: Colors.white),
+                                )
                               ),
-                            )
+                            ),
+                
                           ],
                         ),
-                      ),
-                    ),
-                    Positioned(
-                      top: 120,
-                      left: 33,
-                      right: 33,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left: 6),
-                            child: AppLargeText(text: "Gram yang diinginkan", size: 14,),
-                          ),
-                          SizedBox(height: 15,),
-                          TextFieldWidgetBlack(
-                            hintText: 'Isi nominal',
-                            obscureText: false,
-                            prefixIconData: Icons.price_change_outlined,
-                          ),
-                          SizedBox(height: 5,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 6),
-                            child: Text("Minimal gram 0.0536 gr", textAlign: TextAlign.left, style: TextStyle(fontSize: 12),),
-                          ),
-                          SizedBox(height: 25,),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 205, 204, 201),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 15, top: 12),
-                              child: Text("Harga", style: TextStyle(fontSize: 13),),
-                            ),
-                          ),
-                          SizedBox(height: 15,),
-
-
-
-                        ],
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 )
               ],
             )
@@ -224,3 +274,6 @@ class _BeliGramState extends State<BeliGram> {
     );
   }
 }
+
+final listPrice = ['Rp 100.000', 'Rp 200.000', 'Rp 300.000', 'Rp 400.000', 'Rp 500.000', 'Rp 600.000'];
+final listGram = ['1.00 Gr', '5.00 Gr', '10.00 Gr', '25.00 Gr', '50.00 Gr', '60.00 Gr'];

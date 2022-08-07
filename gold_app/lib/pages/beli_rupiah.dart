@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gold_app/pages/beli_gram.dart';
+import 'package:gold_app/pages/detail_pembelian.dart';
 import 'package:gold_app/pages/login.dart';
 import 'package:gold_app/pages/profile.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
@@ -196,7 +197,7 @@ class _BeliRupState extends State<BeliRup> {
                           SizedBox(height: 25,),
                           Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 80,
+                            height: 75,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 205, 204, 201),
                               borderRadius: BorderRadius.circular(10),
@@ -207,7 +208,55 @@ class _BeliRupState extends State<BeliRup> {
                             ),
                           ),
                           SizedBox(height: 15,),
-
+                          Container(
+                            height: 110,
+                            child: GridView.count(
+                              padding: EdgeInsets.zero,
+                              physics: NeverScrollableScrollPhysics(),
+                              crossAxisCount: 3,
+                              childAspectRatio: 2/1,
+                              children: [
+                                for (var list in listPrice)
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 4, right: 4, bottom: 8),
+                                    // width: MediaQuery.of(context).size.width * 0.28,
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(color: Color.fromARGB(255, 77, 200, 58),)
+                                    ),
+                                    child: Center(
+                                      child: AppText(text: '$list', color: Color.fromARGB(255, 77, 200, 58), size: 12,),
+                                    ),
+                                  )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Container(
+                            height: 45,
+                            width: MediaQuery.of(context).size.width * 1.2,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Color.fromARGB(255, 83, 211, 58),
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(8)
+                                )
+                              ),
+                              onPressed: (() {
+                                print("Proses Beli");
+                                Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(builder: (context) => DetailBeli())
+                                );
+                              }), 
+                              child: const Text(
+                                "Beli emas sekarang",
+                                style: TextStyle(fontSize: 14, color: Colors.white),
+                              )
+                            ),
+                          ),
 
 
                         ],
@@ -223,3 +272,6 @@ class _BeliRupState extends State<BeliRup> {
     );
   }
 }
+
+final listPrice = ['Rp 100.000', 'Rp 200.000', 'Rp 300.000', 'Rp 400.000', 'Rp 500.000', 'Rp 600.000'];
+final listGram = ['1.00 Gr', '5.00 Gr', '10.00 Gr', '25.00 Gr', '50.00 Gr', '60.00 Gr'];
