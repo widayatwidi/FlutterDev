@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gold_app/pages/beli_rupiah.dart';
+import 'package:gold_app/pages/confirm_beli.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
 import 'package:gold_app/widgets/app_text.dart';
 import 'package:gold_app/widgets/reusable_widget.dart';
@@ -91,7 +92,7 @@ class _DetailBeliState extends State<DetailBeli> {
               SizedBox(height: 20,),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.8,
+                height: MediaQuery.of(context).size.height * 0.9,
                 decoration: BoxDecoration(
                   color: Colors.white
                 ),
@@ -143,6 +144,30 @@ class _DetailBeliState extends State<DetailBeli> {
                         obscureText: false,
                         prefixIconData: 'btn.png',
                         suffixIconData: Icons.arrow_forward_ios,
+                      ),
+                      SizedBox(height: 20,),
+                      Container(
+                        height: 45,
+                        width: MediaQuery.of(context).size.width * 1.2,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 83, 211, 58),
+                            shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(8)
+                            )
+                          ),
+                          onPressed: (() {
+                            print("Proses Beli");
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => ConfirmBeli())
+                            );
+                          }), 
+                          child: const Text(
+                            "Lanjutkan Pembelian",
+                            style: TextStyle(fontSize: 14, color: Colors.white),
+                          )
+                        ),
                       ),
                     ],
                   ),
