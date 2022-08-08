@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gold_app/pages/detail_pembelian.dart';
+import 'package:gold_app/pages/finish_beli.dart';
 import 'package:gold_app/widgets/app_large_text.dart';
 import 'package:gold_app/widgets/app_text.dart';
 import 'package:gold_app/widgets/reusable_widget.dart';
@@ -193,11 +194,11 @@ class _ConfirmBeliState extends State<ConfirmBeli> {
                             )
                           ),
                           onPressed: (() {
-                            print("Proses Beli");
-                            // Navigator.push(
-                            //   context, 
-                            //   MaterialPageRoute(builder: (context) => ConfirmBeli())
-                            // );
+                            print("Lanjutkan ke pembayaran");
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => FinishBeli())
+                            );
                           }), 
                           child: const Text(
                             "Selesaikan Pembayaran",
