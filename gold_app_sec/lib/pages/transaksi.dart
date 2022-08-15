@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:gold_app_sec/pages_transaksi/transaksi_beli.dart';
 import 'package:gold_app_sec/widgets/app_large_text.dart';
 import 'package:gold_app_sec/widgets/app_text.dart';
 import 'package:gold_app_sec/widgets/reusable_widget.dart';
@@ -98,13 +99,21 @@ class _TransaksiPageState extends State<TransaksiPage> {
                       children: <Widget>[
                         Column(
                           children: [
-                            CircleAvatar(
-                              backgroundColor: Color.fromARGB(255, 249, 150, 113),
-                              radius: 18,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(builder: (context) => TransaksiBeli())
+                                );
+                              },
                               child: CircleAvatar(
-                                radius: 17.5,
-                                // backgroundImage: AssetImage("assets/images/check-ok.jpeg"),
-                                backgroundColor: Colors.transparent,
+                                backgroundColor: Color.fromARGB(255, 249, 150, 113),
+                                radius: 18,
+                                child: CircleAvatar(
+                                  radius: 17.5,
+                                  // backgroundImage: AssetImage("assets/images/check-ok.jpeg"),
+                                  backgroundColor: Colors.transparent,
+                                ),
                               ),
                             ),
                             SizedBox(height: 5,),
