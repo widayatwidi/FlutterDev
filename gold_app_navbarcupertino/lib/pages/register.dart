@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:gold_app_navbarcupertino/pages/dashboard.dart';
-import 'package:gold_app_navbarcupertino/pages/register.dart';
+import 'package:gold_app_navbarcupertino/pages/login.dart';
 import 'package:gold_app_navbarcupertino/widgets/app_large_text.dart';
 import 'package:gold_app_navbarcupertino/widgets/reusable_widget.dart';
 import 'package:gold_app_navbarcupertino/widgets/text_field.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,27 +30,25 @@ class _LoginPageState extends State<LoginPage> {
         )),
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(20, MediaQuery.of(context).size.height * 0.1, 20, 0),
+            padding: EdgeInsets.fromLTRB(20, MediaQuery.of(context).size.height * 0.06, 20, 0),
             child: Column(
               children: <Widget>[
                 logoWidget("assets/images/logo.png"),
-                SizedBox(height: 50,),
+                SizedBox(height: 20,),
                 Center(
                   child: AppLargeText(
-                    text: "Selamat Datang di Baby Gold!",
-                    size: 20,
+                    text: "Lakukan registrasi di sini.",
+                    size: 15,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 12,),
-                Center(
-                  child: AppLargeText(
-                    text: "Silahkan lakukan login untuk melanjutkan",
-                    size: 12,
-                    color: Colors.white,
-                  ),
+                SizedBox(height: 30,),
+                TextFieldWidget(
+                  hintText: 'Nama Lengkap',
+                  obscureText: false,
+                  prefixIconData: Icons.person,
                 ),
-                SizedBox(height: 50,),
+                SizedBox(height: 15,),
                 TextFieldWidget(
                   hintText: 'Email',
                   obscureText: false,
@@ -60,6 +57,12 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 15,),
                 TextFieldWidget(
                   hintText: 'Password',
+                  obscureText: true,
+                  prefixIconData: Icons.lock_outline,
+                ),
+                SizedBox(height: 15,),
+                TextFieldWidget(
+                  hintText: 'Ulangi Password',
                   obscureText: true,
                   prefixIconData: Icons.lock_outline,
                 ),
@@ -76,33 +79,18 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onPressed: (() {
                       print("Proses Login");
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(builder: (context) => DashboardPage())
-                      );
+                      // Navigator.push(
+                      //   context, 
+                      //   MaterialPageRoute(builder: (context) => DestinasiPage())
+                      // );
                     }), 
                     child: const Text(
-                      "Login",
+                      "Register",
                       style: TextStyle(fontSize: 14, color: Colors.black),
                     )
                   ),
                 ),
                 SizedBox(height: 10,),
-                Center(
-                  child: TextButton(
-                    child: const Text(
-                      "Lupa kata sandi?",
-                      style: TextStyle(color: Color.fromARGB(255, 76, 242, 42), fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      // Navigator.push(
-                      //   context, 
-                      //   MaterialPageRoute(builder: (context) => LoginPage())
-                      // );
-                    },
-                  ),
-                ),
-                SizedBox(height: 10),
                 Container(
                   height: 40,
                   decoration: BoxDecoration(
@@ -113,18 +101,18 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
-                        "Tidak memiliki akun?",
+                        "Sudah memiliki akun?",
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
                       TextButton(
                         child: const Text(
-                          "Daftar di sini.",
+                          "Login di sini.",
                           style: TextStyle(color: Color.fromARGB(255, 76, 242, 42), fontWeight: FontWeight.w400, fontSize: 12),
                         ),
                         onPressed: () {
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => RegisterPage())
+                            MaterialPageRoute(builder: (context) => LoginPage())
                           );
                         },
                       )
