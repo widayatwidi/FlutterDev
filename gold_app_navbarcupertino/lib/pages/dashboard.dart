@@ -56,16 +56,16 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 }
 
-// class Page2_1 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: CupertinoButton(
-//         child: Text("Back"), 
-//         onPressed: () {
-//           Navigator.push(context, CupertinoPageRoute(builder: (context) => HistoryPage()));
-//         }
-//       )
-//     );
-//   }
-// }
+class Page2_1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: CupertinoButton(
+        child: Text("Back"), 
+        onPressed: () {
+          Navigator.push(context, CupertinoPageRoute(builder: (context) => HistoryPage()));
+        }
+      )
+    );
+  }
+}
