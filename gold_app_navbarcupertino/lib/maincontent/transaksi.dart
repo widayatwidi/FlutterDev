@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:gold_app_navbarcupertino/transaksipages/cetakemas.dart';
 import 'package:gold_app_navbarcupertino/transaksipages/transaksibeli.dart';
 import 'package:gold_app_navbarcupertino/widgets/app_large_text.dart';
 import 'package:gold_app_navbarcupertino/widgets/app_text.dart';
@@ -153,19 +154,27 @@ class _TransaksiPageState extends State<TransaksiPage> {
                         ),
                         Column(
                           children: [
-                            CircleAvatar(
-                              backgroundColor: Color.fromARGB(255, 235, 255, 111),
-                              radius: 18,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(builder: (context) => CetakEmas())
+                                );
+                              },
                               child: CircleAvatar(
-                                radius: 17.5,
-                                // backgroundImage: AssetImage("assets/images/check-ok.jpeg"),
-                                backgroundColor: Colors.transparent,
+                                backgroundColor: Color.fromARGB(255, 235, 255, 111),
+                                radius: 18,
+                                child: CircleAvatar(
+                                  radius: 17.5,
+                                  // backgroundImage: AssetImage("assets/images/check-ok.jpeg"),
+                                  backgroundColor: Colors.transparent,
+                                ),
                               ),
                             ),
                             SizedBox(height: 5,),
                             AppText(text: "Cetak Emas", size: 9,)
                           ],
-                        )
+                        ),
                       ],
                     )
                   ],
