@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:gold_app_navbarcupertino/transaksipages/detailbayar.dart';
 import 'package:gold_app_navbarcupertino/transaksipages/transaksibeli.dart';
 import 'package:gold_app_navbarcupertino/widgets/app_large_text.dart';
 import 'package:gold_app_navbarcupertino/widgets/app_text.dart';
@@ -153,7 +154,7 @@ class _MetodeBayarState extends State<MetodeBayar> {
                         print("Proses Beli Emas");
                         Navigator.push(
                           context, 
-                          MaterialPageRoute(builder: (context) => MetodeBayar())
+                          MaterialPageRoute(builder: (context) => DetailBayar())
                         );
                       }), 
                       child: const Text(
