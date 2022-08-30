@@ -39,14 +39,14 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Hello",
                   style: TextStyle(
-                    fontSize: 50,
+                    fontSize: 45,
                     fontWeight: FontWeight.bold
                   ),
                 ),
                 Text(
                   "Sign into your account",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     color: Colors.grey[500]
                   ),
                 ),
@@ -123,16 +123,66 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 10,),
-                Text(
-                  "Forgot your password?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[500]
-                  ),
-                ),
+                Row(
+                  children: [
+                    Expanded(child: Container()),
+                    Text(
+                      "Forgot your password?",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey[500]
+                      ),
+                    ),
+                  ],
+                )
+                
               ],
             ),
           ),
+          SizedBox(height: 30,),
+          Container(
+            width: w*0.5,
+            height: h * 0.08,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/loginbtn.png"
+                ),
+                fit: BoxFit.cover
+              )
+            ),
+            child: Center(
+              child: Text(
+                "Sign In",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 35,),
+          RichText(
+            text: TextSpan(
+              text: "Don\'t have an account?",
+              style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 16
+              ),
+              children: [
+                TextSpan(
+                  text: " Create",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold
+                  )
+                )
+              ]
+            ),
+          )
         ],
       ),
     );
