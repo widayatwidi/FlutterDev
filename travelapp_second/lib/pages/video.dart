@@ -134,8 +134,8 @@ class _VideoPageState extends State<VideoPage> with TickerProviderStateMixin {
                   child: Column(
                     children: [
                       Container(
-                        // margin: const EdgeInsets.only(right: 50),
-                        width: 80,
+                      // margin: const EdgeInsets.only(right: 50),
+                          width: 80,
                         height: 80, // height same with parent height
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
